@@ -1,16 +1,13 @@
 {
-    "name": "Windows 11 on Codespace",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-    "forwardPorts": [
-        8006
-    ],
-    "portsAttributes": {
-        "8006": {
-            "label": "Windows 11 (noVNC)",
-            "onAutoForward": "openBrowser"
-        }
-    },
-    "postStartCommand": "echo '✅ Codespace ready! Run: start-windows.sh to launch Windows 11 VM'"
+  "name": "Windows 11 on Codespaces",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [8006],
+  "portsAttributes": {
+    "8006": {
+      "label": "Windows 11",
+      "onAutoForward": "openBrowser"
+    }
+  }
 }
